@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #24272c;
+    color: #fff;
+    width: 100%;
+    min-height: 100vh;
+    padding: 32px;
+    font-size: 14px;
+}
+
+h2.title {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+.list-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 2em;
+}
+
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    background: #2a7995;
+    text-align: center;
+    cursor: pointer;
+}
+
+.photo-item img {
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+
+    /* figure hover behaviour */
+    opacity: 0;
+    transform: translateY(65px);
+    transition: transform linear 0.3s, opacity linear 0.3s;
+}
+
+.photo-item:hover figcaption {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.photo-item:hover img {
+    opacity: 0.6;
+}
+
+.base {
+    width: 100%;
+    background-color: #fff;
+    color: #2f3746;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.base p {
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.base p span {
+    font-weight: bold;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
+.social-links a {
+    color: #2f3746;
+    font-size: 1.7em;
+    margin-left: 12px;
+    transform: translateY(10px);
+}
+
+.photo-item:hover .social-links a {
+    animation: liftUp linear 0.3s forwards;
+    animation-delay: 0.3s;
+}
+
+.photo-item:hover .social-links a:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.photo-item:hover .social-links a:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@keyframes liftUp {
+    form {
+        transform: translateY(10px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.description {
+    padding: 20px;
+    font-size: 1.1em;
+    letter-spacing: 0.7px;
+    line-height: 24px;
+}
